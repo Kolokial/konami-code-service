@@ -13,7 +13,7 @@ export class KonamiCodeService {
 
   private callback: () => void = () => { };
 
-  constructor(private rendereFactory: RendererFactory2) {
+  constructor(private rendererFactory: RendererFactory2) {
     this.init();
   }
 
@@ -39,7 +39,7 @@ export class KonamiCodeService {
   }
 
   private setupRenderer(): void {
-    this.renderer = this.rendereFactory.createRenderer(null, null);
+    this.renderer = this.rendererFactory.createRenderer(null, null);
   }
 
   private listenForKeyboardEvent(): void {
