@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { KonamiCodeService } from './konami-code.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(private konamiCode: KonamiCodeService) {
+    this.konamiCode.setCodeCompleteMethod(() => {
+      console.warn('Konami Code Activated');
+    });
+  }
 }
