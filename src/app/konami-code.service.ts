@@ -49,13 +49,10 @@ export class KonamiCodeService {
   }
 
   private checkForCodeInput(keyCode: number): void {
-    if (this.keyExistsInCode(keyCode)) {
-      if (this.isCodeComplete(keyCode)) {
-        this.callback();
-        this.resetIndex();
-      } else {
-        this.index++;
-      }
+    if (this.keyExistsInCode(keyCode) && this.isCodeComplete(keyCode)) {
+      this.doCallback();
+    } else if (this.keyExistsInCode(keyCode)) {
+      this.index++;
     } else {
       this.resetIndex();
     }
@@ -71,5 +68,11 @@ export class KonamiCodeService {
 
   private resetIndex(): void {
     this.index = 0;
+  }
+
+  private doCallback(): void {
+    if (this.callback) {
+      this.callback();
+    }
   }
 }
