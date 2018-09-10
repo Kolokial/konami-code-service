@@ -6,7 +6,7 @@ import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 export class KonamiCodeService {
 
   private code: number[] = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-  private index: number = 0;
+  private index = 0;
 
   private _stopListening: () => void;
   private renderer: Renderer2;
